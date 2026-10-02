@@ -1,70 +1,146 @@
-# Getting Started with Create React App
+﻿# CryptoTracker 📈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive cryptocurrency tracking and analytics web application built with **React 18**, **Material UI**, and **Chart.js**, powered by the **CoinGecko API**. CryptoTracker provides real-time market data, interactive historical charts, watchlist management, and dark/light mode support.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🚀 Features
 
-### `npm start`
+- **📊 Live Crypto Dashboard**: Explore top 100 cryptocurrencies ranked by market cap with real-time price updates, 24h percentage changes, market cap, and total volume.
+- **🔍 Instant Search**: Filter coins in real time by name or symbol with debounced user experience.
+- **🔲 Dual View Layout**: Switch effortlessly between visual **Grid Cards** and compact **List Views**.
+- **📈 Interactive Historical Charts**: Analyze price trends, total volume, and market capitalization across multiple timeframes (7, 30, 60, 90, 120, and 365 days) powered by Chart.js.
+- **⭐ Persistent Watchlist**: Bookmark favorite coins using localStorage so your tracked assets remain saved across sessions.
+- **🌓 Dark & Light Theme**: Seamlessly toggle between dark and light themes with preference saved in localStorage.
+- **📱 Fully Responsive**: Optimized for desktops, tablets, and smartphones with a custom mobile drawer navigation.
+- **✨ Fluid Animations**: Smooth layout animations and card reveals powered by Framer Motion.
+- **📄 Pagination & Navigation**: Smooth client-side pagination (10 coins/page) with a floating "Back to Top" shortcut button.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🛠️ Tech Stack
 
-### `npm test`
+| Category | Technologies / Libraries |
+| :--- | :--- |
+| **Frontend Framework** | React 18 (Create React App) |
+| **Routing** | React Router DOM v6 |
+| **UI & Styling** | Material UI (MUI v5), MUI Icons, Custom CSS Variables |
+| **Data Visualization** | Chart.js, React-Chartjs-2 |
+| **Animations** | Framer Motion |
+| **HTTP Client** | Axios |
+| **Notifications & Sharing** | React Toastify, React Web Share |
+| **Data Source** | [CoinGecko API](https://www.coingecko.com/en/api) |
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📂 Project Structure
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```text
+crypto-tracker/
+├── public/                     # Static assets and index.html
+├── src/
+│   ├── Assets/                 # Images, mockups, and vector graphics
+│   ├── Components/             # Modular and reusable UI components
+│   │   ├── Coin/               # Coin details page components (LineChart, CoinInfo, PriceToggle, SelectDays)
+│   │   ├── Common/             # Global components (Header, Footer, Button, Loader, BackToTop)
+│   │   ├── Compare/            # Coin comparison components (SelectCoin)
+│   │   ├── DashBoard/          # Dashboard components (Grid, List, Pagination, Search, Tabs)
+│   │   └── LandingPage/        # Hero section & CTA for the home page
+│   ├── functions/              # Utility functions and API integrations
+│   │   ├── addToWatchlist.js   # Adds coin ID to localStorage watchlist
+│   │   ├── coinObject.js       # Normalizes API response to coin object
+│   │   ├── convertDate.js      # Date formatter helper
+│   │   ├── convertNumbers.js   # Formats large numbers (K, M, B)
+│   │   ├── get100Coins.js      # Fetches top 100 cryptocurrencies
+│   │   ├── getCoinData.js      # Fetches details for a single coin
+│   │   ├── getCoinPrices.js    # Fetches market chart data (price/market cap/volume)
+│   │   ├── hasBeenAdded.js     # Checks if coin is in watchlist
+│   │   ├── removeFromWatchlist.js # Removes coin ID from localStorage
+│   │   └── settingChartData.js # Prepares datasets and configs for Chart.js
+│   ├── Pages/                  # Route-level views
+│   │   ├── home.js             # Landing page
+│   │   ├── Dashboard.js        # Main cryptocurrency listing & search
+│   │   ├── Coin.js             # In-depth coin analytics and charts
+│   │   ├── watchlist.js        # Saved coins view
+│   │   └── Compare.js          # Coin comparison view
+│   ├── App.css                 # Global theme colors and variables
+│   ├── App.js                  # Application routing setup
+│   ├── constants.js            # API base endpoints
+│   ├── index.css               # Base CSS reset
+│   └── index.js                # App entry point
+├── package.json                # Project dependencies and npm scripts
+└── README.md                   # Project documentation
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🚦 Getting Started
 
-### `npm run eject`
+### Prerequisites
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Ensure you have the following installed on your machine:
+- **Node.js** (v14.x, v16.x, or v18.x recommended)
+- **npm** (v6.x or higher) or **yarn**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Installation
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. **Clone the repository:**
+   ```bash
+   git clone <repository-url>
+   cd crypto-tracker
+   ```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+2. **Install project dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Learn More
+3. **Start the development server:**
+   ```bash
+   npm start
+   ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+4. **Open in browser:**
+   Navigate to [http://localhost:3000](http://localhost:3000) to view the application.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## 📜 Available Scripts
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+In the project root, you can run:
 
-### Analyzing the Bundle Size
+- **`npm start`**: Runs the app in development mode with hot-reloading at [http://localhost:3000](http://localhost:3000).
+- **`npm test`**: Launches the test runner in interactive watch mode.
+- **`npm run build`**: Compiles the production-ready build to the `build` directory with minified assets.
+- **`npm run eject`**: Removes the single build tool dependency (Note: this is an irreversible action).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+---
 
-### Making a Progressive Web App
+## 🌐 API Reference
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Data is retrieved from the **CoinGecko Public API (v3)**:
 
-### Advanced Configuration
+- **Top Coins Market Data**:
+  `GET https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false`
+- **Single Coin Details**:
+  `GET https://api.coingecko.com/api/v3/coins/{id}`
+- **Historical Market Data**:
+  `GET https://api.coingecko.com/api/v3/coins/{id}/market_chart?vs_currency=usd&days={days}&interval=daily`
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+> **Note:** CoinGecko's free public tier has a rate limit (approximately 10–30 requests/minute). If data does not load immediately, wait a minute or consider configuring an API key.
 
-### Deployment
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🔮 Roadmap & Upcoming Features
 
-### `npm run build` fails to minify
+- [ ] Complete the **Compare Page** for side-by-side coin comparison.
+- [ ] Multi-currency support (e.g., EUR, GBP, INR, JPY).
+- [ ] Real-time crypto price alerts and notifications.
+- [ ] Conversion calculator / exchange calculator widget.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
+
+## 🤝 Acknowledgements
+
+- Built as part of the **AccioJob Frontend Project** program.
+- Cryptocurrency market data provided by [CoinGecko API](https://www.coingecko.com/).
