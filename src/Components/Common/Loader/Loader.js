@@ -6,7 +6,6 @@ function Loader() {
     return (
         <div className="loader-wrapper">
             <CircularProgress color="success" />
-
         </div>
     );
 }
